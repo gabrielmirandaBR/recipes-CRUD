@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import DrinksContext from '../context/DrinksContext';
 
@@ -19,12 +19,9 @@ function DrinkDetail() {
     setIngredientsDrink,
   } = useContext(DrinksContext);
 
-  const [load, setLoad] = useState(true);
-
   const drink = useCallback(async () => {
     const fetch = await fetchDrinksById(id);
     setDrinkDetails(fetch[0]);
-    setLoad(false);
   }, [fetchDrinksById, id, setDrinkDetails]);
 
   useEffect(() => {
@@ -48,7 +45,7 @@ function DrinkDetail() {
 
     setIngredientsDrink(full);
   }, [drinkDetails, setIngredientsDrink]);
-  return !load ? (
+  return (
     <PageDetails>
       <HeaderDetails />
       <main>
@@ -58,7 +55,7 @@ function DrinkDetail() {
       </main>
       <ButtonStartRecipe id={ id } />
     </PageDetails>
-  ) : <h1>Loading</h1>;
+  );
 }
 
 export default DrinkDetail;
