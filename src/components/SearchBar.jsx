@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import RecipesContext from '../context/RecipesContext';
 import DrinksContext from '../context/DrinksContext';
 
+import '../styles/SearchBox.css';
+
 function SearchBar() {
   const FIRST_LETTER = 'first-letter';
   const [textFilter, setTextFilter] = useState('');
@@ -70,7 +72,7 @@ function SearchBar() {
   }
 
   return (
-    <form onSubmit={ handleSubmit }>
+    <form onSubmit={ handleSubmit } className="form">
       <div>
         <div>
           <input
