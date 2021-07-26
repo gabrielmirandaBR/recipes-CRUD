@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import RecipesContext from '../context/RecipesContext';
@@ -21,8 +21,6 @@ function FoodDetails() {
     setIngredientsFood,
   } = useContext(RecipesContext);
 
-  const [load, setLoad] = useState(true);
-
   const food = useCallback(async () => {
     const fetch = await fetchRecipesById(id);
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -34,7 +32,6 @@ function FoodDetails() {
       setFoodDetails({ ...fetch[0] });
     }
 
-    setLoad(false);
   }, [fetchRecipesById, id, setFoodDetails]);
 
   useEffect(() => {
@@ -55,7 +52,7 @@ function FoodDetails() {
 
     setIngredientsFood(full);
   }, [foodDetails, setIngredientsFood]);
-  return !load ? (
+  return (
     <PageDetails>
       <HeaderDetails />
       <main>
@@ -76,7 +73,7 @@ function FoodDetails() {
       </main>
       <ButtonStartRecipe />
     </PageDetails>
-  ) : <h1>Loading</h1>;
+  )
 }
 
 export default FoodDetails;

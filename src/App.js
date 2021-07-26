@@ -1,6 +1,4 @@
 import React from 'react';
-import './App.css';
-
 import Routes from './routes/routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginProvider from './context/LoginProvider';
