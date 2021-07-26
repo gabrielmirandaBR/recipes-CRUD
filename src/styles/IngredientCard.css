@@ -1,0 +1,21 @@
+.ingredient {
+  margin-top: 20px;
+}
+
+.ingredient:last-child {
+  margin-bottom: 70px;
+}
+
+.card-image {
+  margin-top: 8px;
+  width: 50%;
+}
+
+.title-container {
+  width: 100%;
+}
+
+.card-title {
+  color: wheat;
+  text-align: center;
+}

@@ -66,3 +66,15 @@
     transform: rotate(-10deg);
   }
 }
+
+button:hover {
+  filter: blur(0.2px);
+}
+
+.radio {
+  margin-left: 25px;
+}
+
+.row {
+  width: 360px;
+}
