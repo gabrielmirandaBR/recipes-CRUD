@@ -33,7 +33,7 @@ Neste projeto, foi utilizado Context API como gerenciador de estado e a bibliote
 ![image](perfil.gif)
 
 
-Para iniciar o desenvolvimento, é necessário clonar o repositório do GitHub, acessar o projeto Wallet e intalar as dependências:
+Para iniciar o desenvolvimento, é necessário clonar o repositório do GitHub, acessar o projeto Recipes e intalar as dependências:
 ```shell
 cd "diretorio de sua preferencia"
 
